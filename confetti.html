@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>confetti</title>
+    <link rel="stylesheet" href="confetti.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="svg hide" id="svg"></div>
+
+      <a>Get Started</a>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.13/lottie.min.js"
+      integrity="sha512-srGxQe2w7s50+5/nNgEVKYtBm15zRylJwdjxYnGEZr3mmHFJKFjA/ImA2OKizVzoIDX8XISMHDI1+az9pnumbQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      const play = document.querySelector("a");
+
+      const svgContainer = document.getElementById("svg");
+      const animItem = bodymovin.loadAnimation({
+        wrapper: svgContainer,
+        animType: "svg",
+        loop: false,
+        autoplay: false,
+        path: "https://assets1.lottiefiles.com/packages/lf20_w7mxvfzo.json",
+      });
+
+      play.addEventListener("click", () => {
+        svgContainer.classList.remove("hide");
+        animItem.goToAndPlay(0, true);
+      });
+
+      animItem.addEventListener("complete", () => {
+        svgContainer.classList.add("hide");
+      });
+    </script>
+  </body>
+</html>
