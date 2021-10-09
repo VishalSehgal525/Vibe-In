@@ -90,3 +90,18 @@ body {
   padding-left: 0.5em;
   font-size: 1.5em;
 }
+
+nav button {
+  justify-content: center;
+  text-align: center;
+  margin: 0 143px;
+}
+
+nav a {
+  color: green;
+  text-decoration: none;
+}
+
+nav button:hover {
+  color: #ffffff;
+}
